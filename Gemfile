@@ -53,6 +53,10 @@ gem 'devise'
 # mysql 
 gem 'mysql2'
 
+# bootstrap
+gem 'bootstrap'
+gem "jquery-rails"
+gem "sassc-rails"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
