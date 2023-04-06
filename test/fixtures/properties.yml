@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  operation: 1
+  type: 1
+  price: 1.5
+  currency_type: 1
+  commune: MyString
+  address: MyString
+  area: 1
+  bedrooms: 1
+  bathrooms: 1
+  user: one
+
+two:
+  operation: 1
+  type: 1
+  price: 1.5
+  currency_type: 1
+  commune: MyString
+  address: MyString
+  area: 1
+  bedrooms: 1
+  bathrooms: 1
+  user: two
