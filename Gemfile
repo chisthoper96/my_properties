@@ -61,6 +61,16 @@ gem "sassc-rails"
 
 gem 'bootstrap'
 
+gem "activestorage"
+gem 'image_processing', '~> 1.2'
+gem 'jquery-datatables-rails'
+gem 'axlsx'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary-edge'
+gem 'pry'
+gem 'axlsx_rails'
+gem 'rubyzip'
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
