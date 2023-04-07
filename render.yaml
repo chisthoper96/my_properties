@@ -2,6 +2,15 @@ databases:
   - name: postgres
     ipAllowList: []
 
+    # Opcional: especificar credenciales de autenticación para la base de datos
+    # user: [INSERT_USERNAME_HERE]
+    # password: [INSERT_PASSWORD_HERE]
+
+    # Opcional: especificar opciones adicionales de configuración de la base de datos
+    # options:
+    #   sslmode: require
+    #   timezone: UTC
+
 services:
   - type: web
     name: rails
@@ -15,4 +24,10 @@ services:
         fromDatabase:
           name: postgres
           property: connectionString
+
+  # Definición corregida del servicio Redis
+  - type: redis
+    name: redis
+    ipAllowList: []
     plan: free
+    maxmemoryPolicy: noeviction
