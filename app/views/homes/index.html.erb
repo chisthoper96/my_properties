@@ -1,0 +1,22 @@
+
+<div class="container" data-controller="home">
+  <h1 class="p-2">Propiedades que pueden interesarte</h1>
+
+  <div class="container">
+    <div class="row">
+      <% @properties.each do |property| %>
+        <div class="col-4">
+          <div class="card" style="width: 18rem;">
+            <%= image_tag property.images.first.variant(resize: "300x300") %>
+            <div class="card-body">
+              <h5 class="card-title"><%= property.commune %> - <%= property.currency_type %> <%= property.price.round %></h5>
+              <p><%= property.operation %> </p>
+              <p class="card-text"></p>
+              <%= link_to 'Ver más', home_path(property), class:"btn btn-primary"%>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

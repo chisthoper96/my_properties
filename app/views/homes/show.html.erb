@@ -1,0 +1,24 @@
+<div class="container ">
+  <div class="row">
+    <div class="col-3">
+      <%= image_tag @property.images.first.variant(resize: "300x300") %>
+    </div>
+    <div class="col-4">
+      <ul class="list-group">
+        <li class="list-group-item"><strong>ID:</strong> <%= @property.id %></li>
+        <li class="list-group-item"><strong>Operación:</strong> <%= @property.operation %></li>
+        <li class="list-group-item"><strong>Tipo de propiedad:</strong> <%= @property.property_type %></li>
+        <li class="list-group-item"><strong>Precio:</strong> <%= number_to_currency(@property.price, unit: @property.currency_type) %></li>
+        <li class="list-group-item"><strong>Comuna:</strong> <%= @property.commune %></li>
+        <li class="list-group-item"><strong>Dirección:</strong> <%= @property.address %></li>
+        <li class="list-group-item"><strong>Área:</strong> <%= @property.area %> m²</li>
+        <li class="list-group-item"><strong>Dormitorios:</strong> <%= @property.bedrooms %></li>
+        <li class="list-group-item"><strong>Baños:</strong> <%= @property.bathrooms %></li>
+      </ul>
+    </div>
+    <div class="col-12">
+      <%= link_to 'Volver', homes_path, class:'btn btn-primary'  %>
+    </div>
+  </div>
+  
+</div>
