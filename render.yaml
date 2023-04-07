@@ -19,6 +19,7 @@ services:
     startCommand: bundle exec rails s
     envVars:
       - key: RAILS_MASTER_KEY
+        value: postgres://chis:BYdTfdbUJrUimoaPvvZ0CMwYXm7q1gCW@dpg-cgo819l269v5rjan6ocg-a:5432/my_properties_pg_production
         sync: false
       - key: DATABASE_URL   
         fromDatabase:

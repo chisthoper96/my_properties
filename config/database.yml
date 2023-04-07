@@ -83,4 +83,7 @@ production:
   <<: *default
   database: my_properties_pg_production
   username: chis
-  url: <%= ENV['DATABASE_URL'] %>
+  password: BYdTfdbUJrUimoaPvvZ0CMwYXm7q1gCW
+  host: dpg-cgo819l269v5rjan6ocg-a
+  port: 5432
+
