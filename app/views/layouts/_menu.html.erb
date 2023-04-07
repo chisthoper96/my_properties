@@ -1,0 +1,11 @@
+<nav class="navbar navbar-light bg-light justify-content-between p-3">
+  <%= link_to 'My Properties', root_path, class: 'navbar-brand'%>
+  <div class=" d-flex ">
+    <% if current_user.present? %>
+      <%= link_to "Mis Proyectos", properties_path(), class:'nav-link m-2' %>
+      <a class="nav-link m-2"><%= current_user.email%></a>
+    <% else %>
+      <%= link_to 'Inicia Sesión', user_session_path, class:'nav-link m-1' %>
+    <% end %>
+  </div>
+</nav>
