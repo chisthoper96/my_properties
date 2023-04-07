@@ -74,6 +74,9 @@ GEM
       htmlentities (~> 4.3.1)
       nokogiri (>= 1.4.1)
       rubyzip (>= 0.9.5)
+    axlsx_rails (0.6.1)
+      actionpack (>= 3.1)
+      caxlsx (>= 3.0)
     bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.16.0)
@@ -97,9 +100,6 @@ GEM
       marcel (~> 1.0)
       nokogiri (~> 1.10, >= 1.10.4)
       rubyzip (>= 1.3.0, < 3)
-    caxlsx_rails (0.6.3)
-      actionpack (>= 3.1)
-      caxlsx (>= 3.0)
     coderay (1.1.3)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
@@ -285,10 +285,10 @@ PLATFORMS
 DEPENDENCIES
   activestorage
   axlsx
+  axlsx_rails
   bootsnap
   bootstrap
   capybara
-  caxlsx_rails
   debug
   devise
   image_processing (~> 1.2)
