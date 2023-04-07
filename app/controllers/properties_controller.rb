@@ -2,11 +2,15 @@ class PropertiesController < ApplicationController
   before_action :set_property, only: [:update, :destroy]
 
   def index
-    @properties = current_user.properties
+    if current_user.present?
+      @properties = current_user.properties 
+    else
+      redirect_to homes_path
+    end
   end
 
   def show
-    @property = current_user.properties.where(id: params[:id]).last
+    @property = current_user.properties.where(id: params[:id]).last if current_user.present?
     if @property.nil?
       flash[:alert] = "No estas autorizado para ver la propiedad"
       redirect_to properties_path
@@ -18,7 +22,7 @@ class PropertiesController < ApplicationController
   end
 
   def edit
-    @property = current_user.properties.where(id: params[:id]).last
+    @property = current_user.properties.where(id: params[:id]).last if current_user.present?
     if @property.nil?
       flash[:alert] = "No estas autorizado para ver la propiedad"
       redirect_to properties_path
