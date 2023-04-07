@@ -1,0 +1,19 @@
+# frozen_string_literal: true
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Propiedades") do |sheet|
+    sheet.add_row ["ID", "Tipo de Operación", "Divisa", "Precio", "Comuna", "Dirección", "Area", "Habitaciones", "Baños", "Fecha de Publicación"]
+    @properties.each do |property|
+        sheet.add_row [
+            property.id,
+            property.operation,
+            property.property_type,
+            property.price,
+            property.commune,
+            property.address.present? ? property.address : 'No Aplica',
+            property.area.present? ? property.area : 'No Aplica',
+            property.bedrooms.present? ? property.bedrooms : 'No Aplica',
+            property.bathrooms.present? ? property.bathrooms : 'No Aplica',
+            property.created_at.strftime('%d/%m/%Y'),
+            ]
+    end
+end
