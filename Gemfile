@@ -51,7 +51,7 @@ gem "bootsnap", require: false
 gem 'devise'
 
 # mysql 
-gem 'mysql2'
+gem 'pg'
 
 gem 'jquery-rails'
 
