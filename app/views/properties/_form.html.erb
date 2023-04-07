@@ -1,0 +1,97 @@
+
+  <%= form_with(model: @property, local: true) do |form| %>
+    <% if @property.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@property.errors.count, "error") %> Hubo un error al guardar la propiedad</h2>
+  
+        <ul>
+        <% @property.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+  <div class="row">
+    <div class="col-9">
+      <div class="row justify-content-center">
+        <div class="col-3 m-1">
+          <div class="form-group">
+            <%= form.label 'Operación' %>
+            <%= form.select :operation, Property.operations.keys, {}, class: 'form-select' %>
+          </div>
+        </div>
+        <div class="col-3 m-1">
+          <div class="form-group">
+            <%= form.label 'Tipo' %>
+            <%= form.select :property_type, Property.property_types.keys, {}, class: 'form-select' %>
+          </div>
+        </div>
+        <div class="col-3 m-1">
+          <div class="form-group">
+            <%= form.label 'Tipo de divisa' %>
+            <%= form.select :currency_type, Property.currency_types.keys, {}, class: 'form-select' %>
+          </div>
+        </div>
+        <div class="col-3 m-1">
+          <div class="form-group">
+            <%= form.label 'Precio' %>
+            <%= form.text_field :price, class: 'form-control' %>
+          </div>
+        </div>
+    
+        <div class="col-3 m-1">
+          <div class="form-group">
+            <%= form.label 'Comuna' %>
+            <%= form.text_field :commune, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col-3 m-1">
+          <div class="form-group">
+            <%= form.label 'Dirección' %>
+            <%= form.text_field :address, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col-3 m-1">
+          <div class="form-group">
+            <%= form.label 'Area' %>
+            <%= form.text_field :area, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col-3 m-1">
+          <div class="form-group">
+            <%= form.label 'Habitaciones' %>
+            <%= form.number_field :bedrooms, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col-3 m-1">
+          <div class="form-group">
+            <%= form.label 'Baños' %>
+            <%= form.number_field :bathrooms, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <%= form.label :images, "Upload Images" %>
+            <%= form.file_field :images, multiple: true, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 d-flex">
+      <div class="actions">
+        <%= form.submit class: 'btn btn-primary m-1' %>
+      </div>
+      
+      <%= link_to 'Volver', properties_path, class: 'btn btn-secondary m-1' %>
+    </div>
+  </div>
+
+
+<% end %>
+

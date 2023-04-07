@@ -1,0 +1,35 @@
+<div class="container">
+  <h1> Mis propiedades</h1>
+  <%= link_to 'Crear Propiedad', new_property_path(), class: 'btn btn-primary m-1'%>
+  <%= link_to "Descargar Excel", export_xlsx_properties_path(format: "xlsx"), class: 'btn btn-primary' %>
+  <table class="table table-bordered" data-controller="property">
+    <thead>
+      <tr>
+        <th scope="col">#ID</th>
+        <th scope="col">Operación</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Tipo de divisa</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Fecha de Creación</th>
+        <th scope="col">actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @properties.each do |property| %>
+        <tr>
+          <th scope="row"><%= property.id %></th>
+          <td><%= property.operation %></td>
+          <td><%= property.property_type %></td>
+          <td><%= property.currency_type %></td>
+          <td><%= property.price.round %></td>
+          <td><%= property.created_at.strftime('%d/%m/%Y') %></td>
+          <td class="">
+            <%= link_to 'Ver', property_path(property), class:'btn btn-primary' %>
+            <%= link_to 'Editar', edit_property_path(property), class:'btn btn-warning'%>
+            <%= link_to 'Eliminar', property_path(property), class:'btn btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

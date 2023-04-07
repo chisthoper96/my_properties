@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="m-3">Mi Propiedad n° <%= @property.id%></h1>
+    </div>
+    <div class="col-3 bg-info p-3">
+      <!-- imagen aqui -->
+      <% @property.images.each do |image| %>
+        <%= image_tag image.variant(resize: "300x300") %>
+      <% end %>
+    </div>
+    <div class="col-9 p-3">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <%= label_tag 'id', 'Id:' %>
+          <%= @property.id %>
+        </li>
+        <li class="list-group-item">
+          <%= label_tag 'operation', 'Operación:' %>
+          <%= @property.operation %>
+        </li>
+        <li class="list-group-item">
+          <%= label_tag 'property_type', 'Tipo:' %>
+          <%= @property.property_type %>
+        </li>
+        <li class="list-group-item">
+          <%= label_tag 'price', 'Precio:' %>
+          <%= @property.price.round %> <%= @property.currency_type %>
+        </li>
+        <li class="list-group-item">
+          <%= label_tag 'commune', 'Comuna:' %>
+          <%= @property.commune %>
+        </li>
+        <li class="list-group-item">
+          <%= label_tag 'address', 'Dirección:' %>
+          <%= @property.address %>
+        </li>
+        <li class="list-group-item">
+          <%= label_tag 'area', 'Area:' %>
+          <%= @property.area %> mts
+        </li>
+        <li class="list-group-item">
+          <%= label_tag 'bedrooms', 'Habitaciones:' %>
+          <%= @property.bedrooms %>
+        </li>
+        <li class="list-group-item">
+          <%= label_tag 'bathrooms', 'Baños:' %>
+          <%= @property.bathrooms %>
+        </li>
+    </div> 
+    <div class="col-12">
+      <%= link_to 'Volver', properties_path, class:'btn btn-primary m-1' %>
+      <%= link_to 'Editar', edit_property_path(@property), class:'btn btn-primary m-1' %>
+    </div>
+  </div>
+</div>
