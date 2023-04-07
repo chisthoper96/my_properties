@@ -83,3 +83,4 @@ production:
   <<: *default
   database: my_properties_pg_production
   username: chis
+  url: <%= ENV['DATABASE_URL'] %>
