@@ -12,23 +12,7 @@ Accede a la aplicación en tu navegador web a través de la URL http://localhost
 
 Diagreama ER
 
-|         Users        |
-| ---      | ---       |
-| id       | integer   |
-| email    | string    |
-
-|        Properties          |
-| ------------- | ---------- |
-| id            | integer    |
-| operation     | integer    |
-| property_type | integer    |
-| price         | float      |
-| currency_type | integer    |
-| commune       | string     |
-| address       | string     |
-| area          | integer    |
-| bedrooms      | integer    |
-| bathrooms     | integer    |
-| user_id       | references |
+Tabla Users, campos: id, email
+Tabla Properties, campos: id, operation, property_type, price, currency_type, commune, address, area, bedrooms, bathrooms, user_id
 
 Un user tiene muchas properties y una property pertenece a un user.
