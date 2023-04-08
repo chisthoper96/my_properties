@@ -1,34 +1,18 @@
 databases:
-  - name: postgres
-    ipAllowList: []
-
-    # Opcional: especificar credenciales de autenticación para la base de datos
-    # user: [INSERT_USERNAME_HERE]
-    # password: [INSERT_PASSWORD_HERE]
-
-    # Opcional: especificar opciones adicionales de configuración de la base de datos
-    # options:
-    #   sslmode: require
-    #   timezone: UTC
+  - name: my_properties_pg_production
+    databaseName: my_properties_pg_production
+    user: chis
 
 services:
   - type: web
-    name: rails
+    name: my_properties
     env: ruby
     buildCommand: "./bin/render-build.sh"
-    startCommand: bundle exec rails s
+    startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
-      - key: RAILS_MASTER_KEY
-        value: postgres://chis:BYdTfdbUJrUimoaPvvZ0CMwYXm7q1gCW@dpg-cgo819l269v5rjan6ocg-a:5432/my_properties_pg_production
-        sync: false
-      - key: DATABASE_URL   
+      - key: DATABASE_URL
         fromDatabase:
-          name: postgres
+          name: my_properties_pg_production
           property: connectionString
-
-  # Definición corregida del servicio Redis
-  - type: redis
-    name: redis
-    ipAllowList: []
-    plan: free
-    maxmemoryPolicy: noeviction
+      - key: RAILS_MASTER_KEY
+        sync: false
