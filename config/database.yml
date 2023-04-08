@@ -67,4 +67,4 @@ production:
   <<: *default
   database: my_properties_pg_production
   username: chis
-  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
+  password: 'BYdTfdbUJrUimoaPvvZ0CMwYXm7q1gCW'
