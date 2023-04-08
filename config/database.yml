@@ -65,6 +65,6 @@ test:
 #
 production:
   <<: *default
-  database: mysite_production
-  username: mysite
+  database: my_properties_pg_production
+  username: chis
   password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
